@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="list-group" *ngIf="repos">
+      <a href="{{repo.html_url}}" class="list-group-item" target="_blank"
+         *ngFor="let repo of repos">
+        <div class="pull-right">
+          <span class="label label-info">Updated: {{repo.updated_at | date:'yyyy-MM-dd'}}</span>
+        </div>
+        <h4 class="list-group-item-heading">{{repo.name}}</h4>
+        <p class="list-group-item-text">{{repo.description || 'No description'}}</p>
+      </a>
+    </div>
+    <div *ngIf="repos.length == 0" class="text-center">這個傢伙很懶，還沒開工喔....</div>
+  </div>
+</div>

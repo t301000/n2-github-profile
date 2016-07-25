@@ -1,0 +1,17 @@
+<nav *ngIf="lastPage > 1">
+  <ul class="pagination">
+    <li [class.disabled]="currPage === 1">
+      <a href="" aria-label="Previous" (click)="$event.preventDefault();prevPage()">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li *ngFor="let page of pages" [class.active]="page === currPage">
+      <a href="" (click)="$event.preventDefault();changePage(page)">{{page}}</a>
+    </li>
+    <li [class.disabled]="currPage === lastPage">
+      <a href="" aria-label="Next" (click)="$event.preventDefault();nextPage()">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

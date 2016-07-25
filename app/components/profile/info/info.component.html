@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3 col-md-offset-1 col-sm-3">
+    <div>
+      <img src="{{user.avatar_url}}" class="img-thumbnail">
+      <a class="btn btn-info btn-block" role="button" href="{{user.html_url}}" target="_blank">View Detail &raquo;</a>
+    </div>
+  </div>
+  <div class="col-md-7 col-sm-9">
+    <div class="stats">
+      <span class="label label-primary">{{user.public_repos}} Public Repos</span>
+      <span class="label label-success">{{user.public_gists}} Public Gists</span>
+      <span class="label label-info">{{user.followers}} Followers</span>
+      <span class="label label-warning">{{user.following}} Following</span>
+    </div>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>帳號:</strong> {{user.login}}
+        </li>
+        <li class="list-group-item">
+          <strong>姓名:</strong> {{user.name || '未填寫'}}
+        </li>
+        <li class="list-group-item">
+          <strong>blog:</strong> <a href="{{user.blog || '#'}}" target="_blank">{{user.blog  || '未填寫'}}</a>
+        </li>
+        <li class="list-group-item">
+          <strong>email:</strong> {{user.email || '未填寫'}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
